@@ -36,7 +36,7 @@ const Navigation = () => {
               <div
                 className={`flex items-center py-1.5 px-2 ${
                   selectedRoute === r.path
-                    ? "bg-black/90 text-white rounded-2xl px-2"
+                    ? "bg-black/90 text-white rounded-2xl px-2 dark:bg-gray-200 dark:text-gray-700"
                     : ""
                 }`}
               >

@@ -17,9 +17,7 @@ const Projects = () => {
             <div className="mt-6">
               <div className="flex items-center mb-4 justify-between">
                 <a href={project.link} target="/blank">
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    {project.name}
-                  </h3>
+                  <h3 className="text-xl font-semibold">{project.name}</h3>
                 </a>
                 <div className="flex gap-4 flex-wrap">
                   {techStackIcons
@@ -40,10 +38,10 @@ const Projects = () => {
                     ))}
                 </div>
               </div>
-              <p className="text-center font-semibold text-gray-700 mb-2">
+              <p className="text-center font-semibold mb-2">
                 {project.description[0]}
               </p>
-              <ul className="list-disc ml-5 text-gray-700">
+              <ul className="list-disc ml-5">
                 {project.description.map(
                   (des, id) => id !== 0 && <li key={id}>{des}</li>
                 )}

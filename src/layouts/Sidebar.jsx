@@ -40,9 +40,7 @@ const SideBar = () => {
           {showMenu ? (
             <React.Fragment>
               <h3 className="text-xl">Manav Arora</h3>
-              <p className="text-xs font-light text-gray-700 mt-1">
-                manav10799@gmail.com
-              </p>
+              <p className="text-xs font-light mt-1">manav10799@gmail.com</p>
             </React.Fragment>
           ) : null}
         </div>

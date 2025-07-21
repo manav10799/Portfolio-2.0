@@ -13,7 +13,7 @@ const Home = () => {
             <h1 className="text-2xl font-semibold">
               👋 Hi, I'm Manav Arora — Software Engineer
             </h1>
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4">
               I'm a Software Engineer from planet Earth 🌍 who enjoys creating
               smooth and responsive web experiences. With 4+ years of
               experience, I focus on building modern web apps using
@@ -21,7 +21,7 @@ const Home = () => {
               <strong> JavaScript</strong>.
             </p>
           </div>
-          <p className="text-gray-700 text-center mt-6 group custom-cursor">
+          <p className="text-center mt-6 group custom-cursor">
             When the{" "}
             <span className="group-hover:font-bold transition">
               code compiles

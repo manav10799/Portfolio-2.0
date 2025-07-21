@@ -6,7 +6,9 @@ export const EXPERIENCE = [
     position: "Software Engineer",
     location: "Hyderabad, India",
     timeline: "July 2023 - Present",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/OpenText_logo.svg/1280px-OpenText_logo.svg.png",
+    darkThemeLogo:
+      "https://companieslogo.com/img/orig/OTEX_BIG.D-b3172504.png?t=1741951344",
+    logo: "https://companieslogo.com/img/orig/OTEX_BIG-ea374e29.png?t=1741951344",
     workDetails: [
       "Contributed to the complete redesign and integration, following the decision to switch to a new design.",
       "Contributed to the migration of the admin panel from Backbone.js to React.",
@@ -19,6 +21,8 @@ export const EXPERIENCE = [
     location: "Hyderabad, India",
     timeline: "August 2021 - June 2023",
     logo: "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoBlack.svg",
+    darkThemeLogo:
+      "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoWhite.svg",
     workDetails: [
       "Built a Project and Billing Management System with the PSA/Timesheet team.",
       "Contributed to the development of reusable components and libraries, streamlining the development process.",
@@ -31,6 +35,8 @@ export const EXPERIENCE = [
     position: "SDE-1 Frontend Intern",
     location: "Remote, India",
     timeline: "August 2021 - June 2023",
+    darkThemeLogo:
+      "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoWhite.svg",
     logo: "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoBlack.svg",
     workDetails: [
       "Gained hands-on experience with HTML, CSS, JavaScript, Angular, responsive design, and cross-browser compatibility; also developed technical documentation and built a documentation website from scratch",

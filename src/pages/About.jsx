@@ -5,11 +5,11 @@ const About = () => {
     <div className="px-4">
       <div>
         <div className="border-b border-dashed border-gray-300 pb-4">
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-100">
             Hi again, I'm Manav ✌🏻 — a mountain soul 🏔️, photographer at heart
             📸, and someone who believes in the power of transformation 💪🏻.
           </p>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-gray-600 dark:text-gray-100">
             My whole life, I had been eating crap, consuming crap — physically
             and mentally.But something changed two years ago. I hit a point
             where I realized I had to take responsibility for my health, my
@@ -18,14 +18,14 @@ const About = () => {
             a way of life — one grounded in discipline, strength, and
             self-respect.
           </p>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-100">
             Through all of life's ups and downs, one thing has remained
             constant: my love for mountains and photography. Nature has always
             been my escape, my reset button. The mountains teach me patience,
             presence, and perspective. Photography helps me slow down, observe,
             and tell stories without saying a word.
           </p>
-          <p className="text-gray-600 font-semibold">
+          <p className="text-gray-600 font-semibold dark:text-gray-100">
             Thanks for being here. Let's keep exploring — through the lens,
             through the journey.
           </p>

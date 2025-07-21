@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import WorkDetails from "./WorkDetails";
+import ThemeContext from "../store/ThemeContext";
 
 const WorkInfo = ({ exp }) => {
   const [showAccordion, setShowAccordion] = useState(false);
+  const { theme } = useContext(ThemeContext);
   return (
     <div>
       <div
@@ -12,13 +14,20 @@ const WorkInfo = ({ exp }) => {
                 rounded-xl shadow-lg dark:shadow-black/40 
                 backdrop-blur-md p-8 mb-4"
       >
-        <img className="w-20 cursor-pointer mr-2 mb-2" src={exp.logo} />
-        <p className="text-gray-900">{exp.position}</p>
+        <img
+          className="w-20 cursor-pointer mr-2 mb-2"
+          src={theme === "light" ? exp.logo : exp.darkThemeLogo}
+        />
+        <p className="text-gray-900 dark:text-gray-200">{exp.position}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <p className="text-[10px] mt-1 text-gray-600">{exp.location}</p>
+            <p className="text-[10px] mt-1 text-gray-600 dark:text-gray-300">
+              {exp.location}
+            </p>
             <span className="mx-2 text-gray-500">|</span>
-            <p className="text-[10px] mt-1 text-gray-600">{exp.timeline}</p>
+            <p className="text-[10px] mt-1 text-gray-600 dark:text-gray-300">
+              {exp.timeline}
+            </p>
           </div>
           <i
             onClick={() => setShowAccordion((prev) => !prev)}
