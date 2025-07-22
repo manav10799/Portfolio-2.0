@@ -34,7 +34,7 @@ export const EXPERIENCE = [
     id: 3,
     position: "SDE-1 Frontend Intern",
     location: "Remote, India",
-    timeline: "August 2021 - June 2023",
+    timeline: "Feb 2021 - August 2021",
     darkThemeLogo:
       "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoWhite.svg",
     logo: "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoBlack.svg",
