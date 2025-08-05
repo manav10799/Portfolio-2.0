@@ -78,13 +78,13 @@ export const techStackIcons = [
   {
     code: "javascript",
     name: "JavaScript",
-    usedIn: ["Stream Mind"],
+    usedIn: ["Stream Mind,Not so boring weather app"],
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     code: "react",
     name: "React",
-    usedIn: ["Stream Mind"],
+    usedIn: ["Stream Mind,Not so boring weather app"],
     link: "https://reactjs.org/docs/getting-started.html",
   },
   { code: "angular", name: "Angular", link: "https://angular.io/docs" },
@@ -102,7 +102,7 @@ export const techStackIcons = [
   {
     code: "tailwindcss",
     name: "Tailwind CSS",
-    usedIn: ["Stream Mind"],
+    usedIn: ["Stream Mind,Not so boring weather app"],
     link: "https://tailwindcss.com/docs",
   },
   {
