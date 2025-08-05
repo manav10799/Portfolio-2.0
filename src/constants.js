@@ -62,6 +62,16 @@ export const PROJECTS = [
     imageLink:
       "https://i.ibb.co/9mbdYWRv/Screenshot-2025-06-21-at-4-32-19-PM.png",
   },
+  {
+    id: 2,
+    name: "Not so boring weather app",
+    description: [
+      "A vibrant, sarcastic Progressive Web App (PWA) built with React, Vite, and Tailwind CSS.",
+      "This mobile-first app delivers real-time weather updates—using the OpenWeather API—always wrapped in a cheeky, brutally honest tone. No more bland forecasts: every weather condition triggers a short, witty roast, and each forecast features a mood-matching pastel gradient",
+    ],
+    link: "https://nsbweather.vercel.app/",
+    imageLink: "https://i.ibb.co/PZH93Z3M/NSBW.png",
+  },
 ];
 
 export const techStackIcons = [
