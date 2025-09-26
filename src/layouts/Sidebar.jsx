@@ -56,7 +56,7 @@ const SideBar = () => {
               <ActionButton
                 name="Resume"
                 onClick={handleResume}
-                href="https://drive.google.com/file/d/17v8NBxA8Tw37voXfItV04wYM0EAuxHWn/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1spk0ot3_FCRHEY1_HPx477F01EmfpJ_N/view?usp=sharing"
                 iconClass="bi-box-arrow-down"
               />
             </div>
