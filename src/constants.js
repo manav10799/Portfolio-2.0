@@ -10,9 +10,9 @@ export const EXPERIENCE = [
       "https://companieslogo.com/img/orig/OTEX_BIG.D-b3172504.png?t=1741951344",
     logo: "https://companieslogo.com/img/orig/OTEX_BIG-ea374e29.png?t=1741951344",
     workDetails: [
-      "Contributed to the complete redesign and integration, following the decision to switch to a new design.",
-      "Contributed to the migration of the admin panel from Backbone.js to React.",
-      " Worked on a Content Management project, implementing new features and improving app performance by identifying and resolving memory leaks due to improper cleanup during component unmounting.",
+      "Led the complete redesign and seamless integration of the application after adopting a new design system, ensuring consistency and improved user experience.",
+      "Migrated and modernized the admin panel from Backbone.js to React, improving maintainability, scalability, and developer productivity.",
+      "Enhanced a Content Management System by implementing new features and resolving memory leaks caused by improper cleanup during component unmounting.",
     ],
   },
   {
@@ -24,10 +24,9 @@ export const EXPERIENCE = [
     darkThemeLogo:
       "https://d2w2i7rp1a0wob.cloudfront.net/static/images/logos/KekaLogoWhite.svg",
     workDetails: [
-      "Built a Project and Billing Management System with the PSA/Timesheet team.",
-      "Contributed to the development of reusable components and libraries, streamlining the development process.",
-      "Reduced CSS file size and page load time by 70%, improving performance.",
-      "Integrated REST APIs for smooth data exchange.",
+      "Led UI development for Attendance and Timesheet modules, ensuring a scalable and user-friendly design.",
+      "Developed reusable components and documentation to streamline the development process.",
+      "Improved responsiveness by implementing debouncing and caching, reducing unnecessary API calls and boosting performance.",
     ],
   },
   {
@@ -138,6 +137,11 @@ export const techStackIcons = [
     code: "backbonedotjs",
     name: "Backbone.js",
     link: "https://backbonejs.org/#Getting-started",
+  },
+  {
+    code: "githubactions",
+    name: "Github Actions",
+    link: "https://github.com/features/actions",
   },
 ];
 
