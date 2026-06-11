@@ -1,78 +1,176 @@
 @import "tailwindcss";
+@import "./styles/tokens.css";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* map tokens into Tailwind utilities (bg-bg, text-fg, border-line, …).
+   `inline` keeps the runtime var() so .light can flip them. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-contrast: var(--accent-contrast);
 
-.checkbox {
-  opacity: 0;
-  position: absolute;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-step--1: var(--step--1);
+  --text-step-0: var(--step-0);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step-4: var(--step-4);
+  --text-step-5: var(--step-5);
+  --text-step-6: var(--step-6);
 }
 
-.checkbox-label {
-  background-color: #111;
-  width: 50px;
-  height: 26px;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
-.checkbox-label .ball {
-  background-color: #fff;
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  left: 2px;
-  top: 2px;
+/* ── custom cursor ─────────────────────────── */
+/* native cursor hidden only when the custom one is mounted (fine pointers) */
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
   border-radius: 50%;
-  transition: transform 0.2s linear;
+  will-change: transform;
 }
 
-.checkbox:checked+.checkbox-label .ball {
-  transform: translateX(24px);
+.cursor-dot {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  margin: calc(var(--cursor-size) / -2) 0 0 calc(var(--cursor-size) / -2);
+  background: var(--accent);
+  transition: scale var(--dur-fast) var(--ease-snap);
 }
 
-.custom-cursor {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" stroke-linejoin="round" d="M12 8S9.75 5 7 5a4.5 4.5 0 0 0-4.5 4.5C2.5 14.5 12 20 12 20s9.5-5.5 9.5-10.5A4.5 4.5 0 0 0 17 5c-2.75 0-5 3-5 3Z"></path></svg>'), auto
+.cursor-ring {
+  width: var(--cursor-ring);
+  height: var(--cursor-ring);
+  margin: calc(var(--cursor-ring) / -2) 0 0 calc(var(--cursor-ring) / -2);
+  border: 1px solid var(--accent);
+  opacity: 0.5;
+  transition:
+    scale var(--dur-base) var(--ease-out-expo),
+    opacity var(--dur-base) var(--ease-out-expo);
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
+.cursor-dot--hover {
+  scale: 0.5;
 }
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.cursor-ring--hover {
+  scale: 1.8;
   opacity: 1;
+}
+
+/* ── ink & signal texture ──────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 30%, transparent 75%);
+}
+
+/* ── micro-interactions ────────────────────── */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--accent-dim);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+.scroll-cue-dot {
+  animation: scroll-cue 1.8s var(--ease-out-expo) infinite;
+}
+
+/* contact submit: particle burst around the button */
+@keyframes burst {
+  0% {
+    transform: rotate(var(--burst-angle)) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--burst-angle)) translateX(56px);
+    opacity: 0;
+  }
+}
+.burst-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px;
+  background: var(--accent);
+  animation: burst 0.6s var(--ease-out-expo) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot,
+  .scroll-cue-dot,
+  .burst-particle {
+    animation: none;
+  }
 }
